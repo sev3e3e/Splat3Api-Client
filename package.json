@@ -1,6 +1,6 @@
 {
   "name": "splat3api-api-client",
-  "version": "0.0.14-alpha",
+  "version": "0.0.15-alpha",
   "description": "OpenAPI client for splat3api-api-client",
   "author": "OpenAPI-Generator",
   "repository": {

@@ -2,8 +2,8 @@
 .npmignore
 README.md
 package.json
+src/apis/RankingApi.ts
 src/apis/ScheduleApi.ts
-src/apis/XRankingsApi.ts
 src/apis/index.ts
 src/index.ts
 src/models/GetAllSchedules200Response.ts
