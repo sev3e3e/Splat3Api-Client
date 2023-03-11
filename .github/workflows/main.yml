@@ -22,6 +22,7 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@sev3e3e'
+
       - name: Publish to registry
         run: yarn publish
         env:
