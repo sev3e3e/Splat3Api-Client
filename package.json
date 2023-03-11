@@ -1,7 +1,7 @@
 {
-  "name": "@sev3e3e/splat3api-api-client",
+  "name": "@sev3e3e/splat3api-client",
   "version": "0.0.15-alpha",
-  "description": "OpenAPI client for @sev3e3e/splat3api-api-client",
+  "description": "OpenAPI client for @sev3e3e/splat3api-client",
   "author": "OpenAPI-Generator",
   "repository": {
     "type": "git",
