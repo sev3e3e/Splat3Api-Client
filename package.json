@@ -1,6 +1,6 @@
 {
   "name": "@sev3e3e/splat3api-client",
-  "version": "0.0.16-alpha",
+  "version": "0.0.17-alpha",
   "description": "OpenAPI client for @sev3e3e/splat3api-client",
   "author": "OpenAPI-Generator",
   "repository": {
