@@ -26,7 +26,7 @@ jobs:
           scope: '@sev3e3e'
 
       - name: Publish to registry
-        run: yarn publish
+        run: yarn publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
