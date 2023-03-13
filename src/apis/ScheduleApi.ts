@@ -15,13 +15,13 @@
 
 import * as runtime from '../runtime';
 import type {
-  AllSchedule,
+  AllSchedules,
   SalmonRunSchedule,
   Schedule,
 } from '../models';
 import {
-    AllScheduleFromJSON,
-    AllScheduleToJSON,
+    AllSchedulesFromJSON,
+    AllSchedulesToJSON,
     SalmonRunScheduleFromJSON,
     SalmonRunScheduleToJSON,
     ScheduleFromJSON,
@@ -37,7 +37,7 @@ export class ScheduleApi extends runtime.BaseAPI {
      * `regular match`, `bankaraMatch Open`, `bankaraMatch Challenge`, `Salmon Run`, `X Battle`のスケジュールを返します。
      * Get All Schedules
      */
-    async getAllSchedulesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AllSchedule>> {
+    async getAllSchedulesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AllSchedules>> {
         const queryParameters: any = {};
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -49,14 +49,14 @@ export class ScheduleApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => AllScheduleFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => AllSchedulesFromJSON(jsonValue));
     }
 
     /**
      * `regular match`, `bankaraMatch Open`, `bankaraMatch Challenge`, `Salmon Run`, `X Battle`のスケジュールを返します。
      * Get All Schedules
      */
-    async getAllSchedules(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AllSchedule> {
+    async getAllSchedules(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AllSchedules> {
         const response = await this.getAllSchedulesRaw(initOverrides);
         return await response.value();
     }
