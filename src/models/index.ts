@@ -3,5 +3,5 @@
 export * from './AllSchedules';
 export * from './SalmonRunSchedule';
 export * from './Schedule';
-export * from './ScheduleStagesInner';
+export * from './Stage';
 export * from './XRankingPlayerData';

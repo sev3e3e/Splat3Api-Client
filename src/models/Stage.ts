@@ -16,66 +16,50 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface SalmonRunSchedule
+ * @interface Stage
  */
-export interface SalmonRunSchedule {
+export interface Stage {
     /**
      * 
-     * @type {Date}
-     * @memberof SalmonRunSchedule
+     * @type {number}
+     * @memberof Stage
      */
-    startTime: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof SalmonRunSchedule
-     */
-    endTime: Date;
+    id: number;
     /**
      * 
      * @type {string}
-     * @memberof SalmonRunSchedule
+     * @memberof Stage
      */
-    stage: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof SalmonRunSchedule
-     */
-    weapons: Array<string> | null;
+    : string;
 }
 
 /**
- * Check if a given object implements the SalmonRunSchedule interface.
+ * Check if a given object implements the Stage interface.
  */
-export function instanceOfSalmonRunSchedule(value: object): boolean {
+export function instanceOfStage(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "startTime" in value;
-    isInstance = isInstance && "endTime" in value;
-    isInstance = isInstance && "stage" in value;
-    isInstance = isInstance && "weapons" in value;
+    isInstance = isInstance && "id" in value;
+    isInstance = isInstance && "" in value;
 
     return isInstance;
 }
 
-export function SalmonRunScheduleFromJSON(json: any): SalmonRunSchedule {
-    return SalmonRunScheduleFromJSONTyped(json, false);
+export function StageFromJSON(json: any): Stage {
+    return StageFromJSONTyped(json, false);
 }
 
-export function SalmonRunScheduleFromJSONTyped(json: any, ignoreDiscriminator: boolean): SalmonRunSchedule {
+export function StageFromJSONTyped(json: any, ignoreDiscriminator: boolean): Stage {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         
-        'startTime': (new Date(json['startTime'])),
-        'endTime': (new Date(json['endTime'])),
-        'stage': json['stage'],
-        'weapons': json['weapons'],
+        'id': json['id'],
+        '': json[''],
     };
 }
 
-export function SalmonRunScheduleToJSON(value?: SalmonRunSchedule | null): any {
+export function StageToJSON(value?: Stage | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -84,10 +68,8 @@ export function SalmonRunScheduleToJSON(value?: SalmonRunSchedule | null): any {
     }
     return {
         
-        'startTime': (value.startTime.toISOString()),
-        'endTime': (value.endTime.toISOString()),
-        'stage': value.stage,
-        'weapons': value.weapons,
+        'id': value.id,
+        '': value.,
     };
 }
 
