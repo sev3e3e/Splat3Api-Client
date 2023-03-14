@@ -12,64 +12,28 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+
 /**
- * 
+ * Regular, Bankara, X
  * @export
- * @interface Stage
  */
-export interface Stage {
-    /**
-     * 
-     * @type {number}
-     * @memberof Stage
-     */
-    id: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof Stage
-     */
-    name: string;
+export const BattleMode = {
+    Regular: 'Regular',
+    Bankara: 'Bankara',
+    X: 'X'
+} as const;
+export type BattleMode = typeof BattleMode[keyof typeof BattleMode];
+
+
+export function BattleModeFromJSON(json: any): BattleMode {
+    return BattleModeFromJSONTyped(json, false);
 }
 
-/**
- * Check if a given object implements the Stage interface.
- */
-export function instanceOfStage(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+export function BattleModeFromJSONTyped(json: any, ignoreDiscriminator: boolean): BattleMode {
+    return json as BattleMode;
 }
 
-export function StageFromJSON(json: any): Stage {
-    return StageFromJSONTyped(json, false);
-}
-
-export function StageFromJSONTyped(json: any, ignoreDiscriminator: boolean): Stage {
-    if ((json === undefined) || (json === null)) {
-        return json;
-    }
-    return {
-        
-        'id': json['id'],
-        'name': json['name'],
-    };
-}
-
-export function StageToJSON(value?: Stage | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
-    }
-    return {
-        
-        'id': value.id,
-        'name': value.name,
-    };
+export function BattleModeToJSON(value?: BattleMode | null): any {
+    return value as any;
 }
 

@@ -7,6 +7,8 @@ src/apis/ScheduleApi.ts
 src/apis/index.ts
 src/index.ts
 src/models/AllSchedules.ts
+src/models/BattleMode.ts
+src/models/GameMode.ts
 src/models/SalmonRunSchedule.ts
 src/models/Schedule.ts
 src/models/Stage.ts
